@@ -141,6 +141,8 @@ jobs:
         KERNEL_VER: ${{ inputs.kernel_version }}
         OS_PATCH: ${{ inputs.os_patch_level }}
       run: |
+        git ls-remote --heads https://android.googlesource.com/kernel/common 'android14-6.1-2025-07'
+        
         FORMATTED_BRANCH="${ANDROID_VER}-${KERNEL_VER}-${OS_PATCH}"
 
         repo init -u https://android.googlesource.com/kernel/manifest \
